@@ -1,6 +1,8 @@
 let path= require("path")
 let fs = require('fs');
+let request= require('request')
 let pathObj= path.parse(__filename)
+
 let objetoComandos= {
     pwd: function(cmd3, done){
         let output= ""
@@ -96,13 +98,19 @@ let objetoComandos= {
         let text= data.toString('utf8')
         let textoCortado= text.split('\n')
         let textoAImprimir= textoCortado.sort().join('\n')
-        
         console.log("Nota: Se ordenan primero por numeros, despues mayusculas y luego en orden alfabetico")
         output += textoAImprimir
         done(output)
         });
+    },
+    curl: function(cmd3, done){
+        let output= ""
+        request(cmd3, function (error, response, body) {
+                if(error) throw error // Print the error if one occurred
+                output+= body 
+        done(output)
+        });
     }
-
 }
 
 
