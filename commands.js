@@ -43,10 +43,11 @@ let objetoComandos= {
         let output= ""
         fs.readFile(pathObj.dir +"/"+cmd3, function(err,data){ 
             let text= data.toString('utf8')
-            let textoCortado= text.split('\n').slice(0,5).join('\n');
-            if (err) throw err;
-            output += textoCortado 
-            done(output)
+            console.log(text)
+             let textoCortado= text.split('\n').slice(0,5).join('\n');
+             if (err) throw err;
+             output += textoCortado 
+             done(output)
         });   
           
     },

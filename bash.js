@@ -5,9 +5,6 @@ let done= function(output){
   process.stdout.write('\nprompt > ');
 }
 
-
-//asdjadaijsadoiasdoiaj = funciotonda+ods as
-
 // Output un prompt
 process.stdout.write('prompt > ');
 // El evento stdin 'data' se dispara cuando el user escribe una línea
